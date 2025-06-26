@@ -40,7 +40,7 @@ type Msg
 
 
 
--- Re-evaluate divisors using mathematical rules
+-- Re-evaluate divisors using divisibility rules
 
 
 update : Msg -> State -> State
@@ -153,7 +153,7 @@ isDivisibleByRule divisor numberString =
 
 
 
--- Get the mathematical rule description for a divisor (plain text for now)
+-- Get the divisibility rule description for a divisor (plain text for now)
 
 
 getRuleDescription : Int -> String
@@ -247,7 +247,7 @@ view state =
                 , style "color" "#6c757d"
                 , style "margin" "0"
                 ]
-                [ text "Computational verification of divisibility using mathematical rules" ]
+                [ text "Computational verification of divisibility using divisibility rules" ]
             ]
 
         -- Input section
@@ -289,7 +289,7 @@ view state =
                         [ text (formatDivisorsAsSet state.numberDivisors) ]
                     ]
 
-                -- Mathematical rules used
+                -- Divisibility rules used
                 , if not (List.isEmpty state.numberDivisors) then
                     div [ style "margin-bottom" "40px" ]
                         [ h2
@@ -298,7 +298,7 @@ view state =
                             , style "margin" "0 0 16px 0"
                             , style "color" "#1a252f"
                             ]
-                            [ text "Mathematical Rules Applied" ]
+                            [ text "Divisibility rules Applied" ]
                         , div
                             [ style "background-color" "#f8f9fa"
                             , style "border" "1px solid #e9ecef"
@@ -370,7 +370,7 @@ view state =
 
 
 
--- Render a mathematical rule
+-- Render a divisibility rule
 
 
 renderRule : Int -> Html Msg
